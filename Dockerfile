@@ -34,6 +34,7 @@ RUN apk add --update --no-cache \
 
 COPY entrypoint.sh /entrypoint.sh
 COPY locust-tasks /locust-tasks
+RUN chmod +rx /entrypoint.sh && chmod -R +rX /locust-tasks
 
 USER ${LOCUST_USER}
 WORKDIR ${LOCUST_HOME}
