@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.9
 
 ENV LOCUST_VERSION=0.9.0 \
     LOCUST_USER=locust \
