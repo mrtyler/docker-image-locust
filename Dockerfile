@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.9
 
 ENV LOCUST_VERSION=0.9.0 \
     LOCUST_USER=locust \
@@ -34,6 +34,7 @@ RUN apk add --update --no-cache \
 
 COPY entrypoint.sh /entrypoint.sh
 COPY locust-tasks /locust-tasks
+RUN chmod +rx /entrypoint.sh && chmod -R +rX /locust-tasks
 
 USER ${LOCUST_USER}
 WORKDIR ${LOCUST_HOME}
